@@ -48,7 +48,7 @@ table {
   ##Screen = Border width 1700px upwards
 */
 
-@media (min-width: 10px) {
+@media screen and (min-width: 0px) {
 
  body {
 	background: url(https://i.imgur.com/ej2Seoz.jpg)no-repeat center center fixed;
@@ -227,8 +227,6 @@ table {
   padding: 10px;
   border-radius: 15px;
   display: flex;
-  border: 1px solid;
-  border-color: rgba(255, 255, 255, 0.7);
  }
 
  /*Search bar input*/
@@ -240,12 +238,13 @@ table {
   font-weight: bold;
   font-size: 12px;
   outline: none;
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.6);
+  display: block;
  }
 
  /*Search bar magnifying glass button*/
  .searchbtn {
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.6);
   width: 15%;
   margin-left: 5px;
   border-radius: 5px;
@@ -254,20 +253,28 @@ table {
  }
 
  .searchbtn:hover {
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.4);
   transition: 900ms ease;
  }
 
  .searchbtn .fa {
+  display: block;
   position: absolute;
   top: 25%;
   right: 25%;
   color: white;
   opacity: 0.5;
  }
+ 
+ /*Removes placeholder text onclick*/
+ input:focus::placeholder {
+  color: transparent;
+}
 
  .log_register {
-  display: block;
+  position: absolute;
+  right: 0;
+  display: inline-block;
   border-radius: 4px;
   background-color: rgba(0, 0, 0, 0.2);
   color: #FFFFFF;
@@ -278,7 +285,6 @@ table {
   width: 190px;
   transition: all 0.5s;
   cursor: pointer;
-  float: right;
   margin-top: 12px;
   margin-right: 25px;
   border: 1px solid;
